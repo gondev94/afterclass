@@ -1,0 +1,13 @@
+{% extends 'curso/base.html' %}
+
+{% block contenido  %}
+    <h1>Lista de Alumnos</h1>
+    <a href="{% url 'curso:alumno_create' %}"><button>Crear Alumno</button></a>
+    <ul>
+    {% for object in object_list %}
+        <p>{{ object.Comision }} | {{ object.dni }} </p>
+    {% endfor %}
+    
+    </ul>
+    <a href="{% url 'curso:index' %}"><button>Volver</button></a>
+{% endblock contenido  %}
